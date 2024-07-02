@@ -1,0 +1,499 @@
+:root{
+    --verde:#00A149;
+    --rojo:#ee0707;
+    --negro:#000000;
+    --blanco:#f7f4f4;
+    --azul:#1b0cf5;
+    --titulos: "Roboto", sans-serif;
+    --acua:#00ffff;
+}
+
+/* esto hace que el explorador respete las dimenciones que se le dan a unj objeto */
+html{
+    box-sizing: border-box;
+    /*un rem equivale a 10px con la declaracion de mas abajo*/
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    overflow-x: hidden;
+}
+
+*,*::after, *::before{
+    box-sizing: inherit;
+}
+
+.contenedor{
+    max-width: 110rem;
+    margin:0 auto;
+    width: 95%;
+}
+
+img{
+    max-width: 100%;
+}
+
+.acua{
+    color: var(--acua);
+}
+
+.azul{
+    color: var(--azul);
+}
+
+.ocultar{
+    display: none;
+}
+
+.btn-cerrar{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #eeebeb;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    user-select: none;
+}
+
+.pantalla-completa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #08adee70;
+    z-index: 4;
+}
+
+@keyframes desplazamiento {
+    0%{
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.btn-cerrar:hover{
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+}
+
+.btn{
+    text-decoration: none;
+    color: #eeebeb;
+    font-size: 3rem;
+    text-transform: capitalize;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    transform: all .3s ease-in-out;
+}
+
+@media(min-width: 768px){
+    .btn{
+        font-size: 2.2rem;
+    }
+}
+
+.bordes{
+    border: 3px solid var(--blanco);
+}
+
+@media(min-width: 768px){
+    .bordes{
+        border: 4px solid var(--blanco); 
+    }
+}
+
+.bordes:hover{
+    color: aqua;
+    background-color: #000000;
+}
+
+.btn-rojo{
+    background-color: #ee0707;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.btn-verde{
+    background-color: rgb(47, 0, 255);
+    border: none;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.contenedor-navegacion{
+    background-color: var(--negro);
+    position: relative;
+    z-index: 5;
+}
+
+.contenido-navegacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h2, .navegacion a {   
+    color: var(--blanco);
+}
+
+.navegacion a {
+    text-decoration: none;
+    font-size: 2.2rem;
+    padding: 1.5rem;
+    padding-left: 4rem;
+    display: block;
+    transition: color .3s ease-in-out;
+    text-align: center;
+}
+
+@media(min-width: 768px) {
+    .navegacion a {
+        text-align: left;
+    }
+}
+
+.navegacion a:nth-child(even):hover{
+    color: #ee0707;
+}
+
+.navegacion a:nth-child(odd):hover{
+    color: #1b0cf5;
+}
+
+.navegacion a:first-of-type{
+    margin-top: 3rem;
+}
+
+.navegacion{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 20rem;
+    background-color: #000000;
+    animation: desplazamiento .2s ease-in-out;
+}
+
+.hamburguesa span{
+    background-color: var(--blanco);
+    display: block;
+    width: 5rem;
+    height: .5rem;
+    margin-bottom: .5rem;
+}
+
+.contenedor-header{
+    position: relative;
+}
+
+.contenido-header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(8, 8, 8, 0.5);
+}
+
+.texto-encabezado{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-encabezado h2{
+    color: #eeebeb;
+    font-size: 8rem;
+}
+
+@media(min-width: 768px){
+    .texto-encabezado h2{
+        font-size: 8rem;
+    }
+}
+
+video{
+    width: 100%;
+
+}
+
+.contenedor-nosotros{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5rem;
+}
+
+@media(min-width: 768px){
+    .contenedor-nosotros{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.texto-nosotros, .imagenes-nosotros{
+    flex: 0 0 calc(50% - 1rem);
+}
+
+.texto-nosotros .bienvenida{
+   font-size: 4rem; 
+   color: #1b0cf5;
+   text-align: center;
+}
+
+@media(min-width: 768px){
+    .texto-nosotros .bienvenida{
+        text-align: left;
+    }
+}
+
+.texto-nosotros h1{
+    font-size: 5rem;
+    text-align: center;
+}
+
+@media(min-width: 768px){
+    .texto-nosotros h1{
+        text-align: left;
+    }
+}
+
+.texto-nosotros p{
+    font-size: 2rem;
+    text-align: center;
+}
+
+@media(min-width: 768px){
+    .texto-nosotros p{
+        text-align: left;
+    }
+}
+
+.imagenes-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagenes-nosotros img{
+    border-radius: 5px;
+}
+
+.imagen1, .imagenes2{
+    flex: 0 0 calc(50% - 1rem);
+}
+
+.imagenes2 img{
+    margin-bottom: 1rem;
+}
+
+.texto-proyectos{
+    text-align: center;
+    font-size: 5rem;
+}
+
+.menu{
+    padding-top: 4rem;
+}
+
+.botones-proyectos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.botones-proyectos button{
+    flex: 0 0 calc(50% - 1rem);
+    padding: 1rem 3rem;
+}
+
+@media(min-width: 768px){
+    .botones-proyectos{
+        display: inline-block;
+    }
+    .botones-proyectos button{
+        flex: unset;
+    }
+}
+
+@media(min-width: 768px){
+    .proyectos{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.proyectos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.proyecto{
+    flex: 0 0 calc(33.3% - 1rem);
+    border: 1px solid rgb(179, 161, 161);
+    padding: 3rem;
+    border-radius: 5px;
+}
+.proyecto h2{
+    text-align: center;
+}
+.proyecto p{
+    font-size: 2rem;
+}
+.precio{
+    display: flex;
+    justify-content: space-between;
+}
+.precio p {
+    font-weight: bold;
+    font-size: 2rem;
+}
+.precio button{
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #18044d;
+    color: #eeebeb;
+    height: 3.8rem;
+}
+
+.formulario-contacto{
+    padding-top: 5rem;
+}
+
+@media(min-width: 768px){
+    .formulario-contacto{
+        display: flex;
+    }
+}
+
+.informacion-contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacion-contacto, .formulario{
+    flex:  0 0 calc(50% - 1rem);
+}
+
+.informacion-contacto{
+    background-color: #000000;
+    padding: 2rem;
+}
+
+@media(min-width: 768px){
+    .informacion-contacto{
+        height: 60rem;
+    }
+}
+
+.informacion-contacto h3, .informacion-contacto p, .redes-sociales i{
+    color: #eeebeb;
+}
+
+.informacion-contacto h3{
+    font-size: 4rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.informacion-contacto p{
+    font-size: 3rem;
+}
+
+.informacion-contacto i{
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+
+.redes-sociales{
+    font-size: 3rem;
+}
+
+.formulario{
+    padding: 5rem;
+}
+
+.input-formulario label{
+    display: block;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 1.5rem;   
+}
+
+.input-formulario input, .input-formulario textarea{
+    width: 100%;
+}
+.input-formulario input{
+    padding: 1rem 1.6rem;
+    border: 1px solid black;
+    outline: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.input-formulario textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.pie-pagina{
+    margin-top: 5rem;
+    background-color: #0c0c0c;
+    padding: 5rem;
+}
+
+.contenedor-piepagina{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info{
+    flex: 0 0 calc(25% - 1rem);
+}
+
+.info h3, .info p{
+    color: #eeebeb;
+    text-align: center;
+}
+
+.info h3{
+    font-size: 2.2rem;
+}
+
+.info p {
+    font-size: 1.8rem;
+}
+
+.redes-pie{
+    text-align: center;
+}
+
+.info input[type="email"]{
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+.info input[type="submit"]{
+padding: .5rem 2rem;
+font-size: 1.5rem;
+border-radius: 0;
+}
+
